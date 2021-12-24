@@ -39,9 +39,6 @@ git config --global user.email "guilherme.souza2@universo.univates.br"
 
 ## Editors
 
-# Sublime
-apt-get install sublime-text -y
-
 # VSCode
 apt-get install code -y
 

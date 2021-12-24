@@ -20,7 +20,8 @@ sudo dnf config-manager \
     https://download.docker.com/linux/fedora/docker-ce.repo
 
 ## Install
-sudo dnf install docker-ce docker-ce-cli containerd.io
+sudo dnf -y install docker-ce docker-ce-cli containerd.io
+sudo dnf -y install docker-compose
 
 ## Test docker
 sudo systemctl start docker
@@ -28,7 +29,7 @@ sudo docker run hello-worldsudo
 
 # BRAVE #
 ## Install deps
-dnf install dnf-plugins-core
+dnf install -y dnf-plugins-core
 
 ## Add brave repo
 sudo dnf config-manager \
@@ -37,7 +38,7 @@ sudo dnf config-manager \
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 ## Install
-sudo dnf install brave-browser
+sudo dnf install -y brave-browser
 
 # VSCODE #
 ## Add repo
@@ -49,4 +50,19 @@ sudo sh -c
 dnf check-update
 
 ## Install
-sudo dnf install code
+sudo dnf install -y code
+## Install extensions
+code --install-extension ms-azuretools.vscode-docker 
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension yzhang.markdown-all-in-one
+code --install-extension eamodio.gitlens
+code --install-extension jebbs.plantuml
+code --install-extension ms-vsliveshare.vsliveshare-pack
+code --install-extension xabikos.javascriptsnippets
+code --install-extension dsznajder.es7-react-js-snippets
+code --install-extension vscjava.vscode-java-pack
+
+# GIT #
+sudo dnf install git
+git config --global user.email "guilherme.souza2@universo.univates.br"
+git config --global user.name "guilherme-adesouza"
