@@ -61,6 +61,7 @@ code --install-extension ms-vsliveshare.vsliveshare-pack
 code --install-extension xabikos.javascriptsnippets
 code --install-extension dsznajder.es7-react-js-snippets
 code --install-extension vscjava.vscode-java-pack
+code --install-extension ritwickdey.liveserver
 
 # GIT #
 sudo dnf install git
