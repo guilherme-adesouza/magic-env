@@ -66,3 +66,6 @@ code --install-extension vscjava.vscode-java-pack
 sudo dnf install git
 git config --global user.email "guilherme.souza2@universo.univates.br"
 git config --global user.name "guilherme-adesouza"
+
+# PIP #
+sudo dnf install python3-pip
