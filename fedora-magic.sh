@@ -1,6 +1,6 @@
 # DOCKER #
 ## Remove docker
-sudo dnf remove docker \
+sudo dnf -y remove docker \
                   docker-client \
                   docker-client-latest \
                   docker-common \
@@ -25,11 +25,12 @@ sudo dnf -y install docker-compose
 
 ## Test docker
 sudo systemctl start docker
-sudo docker run hello-worldsudo 
+sudo docker run hello-world
+sudo groupadd docker
+sudo usermod -aG docker $USER
 
 # BRAVE #
 ## Install deps
-dnf install -y dnf-plugins-core
 
 ## Add brave repo
 sudo dnf config-manager \
@@ -38,19 +39,18 @@ sudo dnf config-manager \
 sudo rpm --import https://brave-browser-rpm-release.s3.brave.com/brave-core.asc
 
 ## Install
-sudo dnf install -y brave-browser
+sudo dnf -y install brave-browser
 
 # VSCODE #
 ## Add repo
 sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
-sudo sh -c 
-  'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
+sudo sh -c 'echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" > /etc/yum.repos.d/vscode.repo'
 
 ## Update cache 
-dnf check-update
+sudo dnf check-update
 
 ## Install
-sudo dnf install -y code
+sudo dnf -y install code
 ## Install extensions
 code --install-extension ms-azuretools.vscode-docker 
 code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
@@ -64,9 +64,9 @@ code --install-extension vscjava.vscode-java-pack
 code --install-extension ritwickdey.liveserver
 
 # GIT #
-sudo dnf install git
+sudo dnf -y install git
 git config --global user.email "guilherme.souza2@universo.univates.br"
 git config --global user.name "guilherme-adesouza"
 
 # PIP #
-sudo dnf install python3-pip
+sudo dnf -y install python3-pip
