@@ -22,6 +22,7 @@ sudo dnf config-manager \
 ## Install
 sudo dnf -y install docker-ce docker-ce-cli containerd.io
 sudo dnf -y install docker-compose
+sudo systemctl enable docker
 
 ## Test docker
 sudo systemctl start docker
